@@ -8,9 +8,9 @@ function UserDetail(props){
                 <h2 className="title">{props.fullname}</h2>
                     <div className="dates">
                         <p className="date">Ingresaste a las {props.timestamp}</p>
-                        <h4>Tus datos:</h4>
+                        <h4>Datos:</h4>
                         <div className="personal-data">
-                            <img src={props.img} alt=""/>  
+                            <img className='img-user' src={props.img} alt=""/>  
                             <p className="personal-data">Email: {props.email}</p>
                             <p className="personal-data">DNI: {props.dni}</p>
                             <p className="personal-data">Edad: {props.age}</p>

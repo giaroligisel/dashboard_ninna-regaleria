@@ -16,8 +16,13 @@ function LeftBar(){
             <hr className="sidebar-divider" />
             <ul><span className="nav-link">Productos</span>
                 <ul className="nav-item">
-                    <Link className="nav-link" to='/products/list'>
+                    <Link className="nav-link" to='/products/list?page=1'>
                         <span>Listado</span>
+                    </Link>
+                </ul>
+                <ul className="nav-item">
+                    <Link className="nav-link" to='/products/create'>
+                        <span>Crear nuevo producto</span>
                     </Link>
                 </ul>
                 <ul className="nav-item">
@@ -29,13 +34,13 @@ function LeftBar(){
             <hr className="sidebar-divider" />
             <ul><span className="nav-link">Usuarios</span>
                 <ul className="nav-item">
-                    <Link className="nav-link" to='/users/list'>
+                    <Link className="nav-link" to='/users/list?page=1'>
                         <span>Listado</span>
                     </Link>
                 </ul>
                 <ul className="nav-item">
                     <Link className="nav-link" to='/users/lastAdedd'>
-                        <span>Último usuario agregado</span>
+                        <span>Último usuario registrado</span>
                     </Link>
                 </ul>
             </ul>

@@ -14,18 +14,19 @@ function LastProduct(){
 
     return (
         <>
-            <Header title="Último producto ingresado"/>
+            <Header title="Último producto agregado"/>
             <ProductDetail 
                 image={'http://localhost:3000/images/products/'+lastProduct.image} 
                 name={lastProduct.name} 
-                // style={lastProduct.Styles.name} 
+                style={lastProduct.Styles?.name} 
                 price={lastProduct.price} 
                 stock={lastProduct.stock} 
-                // store={lastProduct.Stores.name} 
-                year={lastProduct.year} 
-                // typeOfBarrel={lastProduct.TypeOfBarrel.name} 
-                timeOfBarrel={lastProduct.timeOfBarrel} 
+                store={lastProduct.Stores?.name} 
+                year={lastProduct.year || 'No corresponde'} 
+                typeOfBarrel={lastProduct.TypeOfBarrel?.name || 'No corresponde'} 
+                timeOfBarrel={lastProduct.time_of_barrel || 'No corresponde'} 
                 description={lastProduct.description}
+                detail={"/products/detail/"+lastProduct.id}
             />
         </>
     )

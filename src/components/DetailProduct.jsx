@@ -11,8 +11,7 @@ function DetailProduct(){
         .then(res => res.json())
         .then(data => {
             setProduct(data);
-            console.log('data: '+data);
-            console.log('product: '+product)
+            console.log(product)
         })
         .catch(err => { console.log(err); })
         }, [id])
@@ -23,14 +22,15 @@ function DetailProduct(){
             <ProductDetail 
                 image={'http://localhost:3000/images/products/'+product.image} 
                 name={product.name} 
-                // style={product.Styles.name} 
+                style={product.Styles?.name} 
                 price={product.price} 
                 stock={product.stock} 
-                // store={product.Stores.name} 
-                year={product.year} 
-                // typeOfBarrel={product.TypeOfBarrel.name} 
-                timeOfBarrel={product.timeOfBarrel} 
+                store={product.Stores?.name || 'No corresponde'} 
+                year={product.year || 'No corresponde'} 
+                typeOfBarrel={product.TypeOfBarrel?.name || 'No corresponde'} 
+                timeOfBarrel={product.time_of_barrel || 'No corresponde'} 
                 description={product.description} 
+                detail={"/products/detail/"+id} 
             />
         </>
     )

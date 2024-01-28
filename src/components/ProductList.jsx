@@ -10,6 +10,7 @@ function ProductList(props) {
       <td>{props.description}</td>
       <td><Link className="nav-link" to={props.image}> Ver imagen </Link></td>
       <td><Link className="nav-link" to={props.detail}> Ver detalle </Link></td>
+      <td><Link className="nav-link" to={props.detail+"/edit"}> Editar </Link></td>
     </tr>
   );
 }
