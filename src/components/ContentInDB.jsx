@@ -5,10 +5,10 @@ function ContentInDB(){
     const [countProducts, setCountProducts] = React.useState([])
     const [countCategory, setCountCategory] = React.useState([])
     const [countUsers, setCountUsers] = React.useState([])
-    const [users, setUsers] = React.useState([])
+    const [countUsersCategory, setCountUsersCategory] = React.useState([])
 
     React.useEffect(() => {
-        fetch('http://localhost:3000/api/products')
+        fetch('http://localhost:3000/api/products/count')
         .then(res => res.json())
         .then(data => {
                 setCountProducts(data.count)
@@ -16,13 +16,14 @@ function ContentInDB(){
             })
         .catch(err => { console.log(err); })
         }, []);
-
+    
     React.useEffect(() => {
-        fetch('http://localhost:3000/api/users')
+        fetch('http://localhost:3000/api/users/count')
         .then(res => res.json())
         .then(data => {
                 setCountUsers(data.count);
-                setUsers(data.users)
+                setCountUsersCategory(data.countByCategory);
+                console.log(countUsersCategory)
             })
         .catch(err => { console.log(err); })
         }, [])
@@ -56,8 +57,8 @@ function ContentInDB(){
                             <h2>Usuarios por rol</h2>
                         </div>
                         <div className="row users">
-                            <Card title="Administradores" quantity={users.filter(user => user.role === 'Administrador').length} icon="fas fa-users-cog"/>
-                            <Card title="Usuarios" quantity={users.filter(user => user.role === 'Usuario').length} icon="fas fa-users"/>
+                            <Card title="Administradores" quantity={countUsersCategory.admin} icon="fas fa-users-cog"/>
+                            <Card title="Usuarios" quantity={countUsersCategory.user} icon="fas fa-users"/>
                         </div>
                     </div>
                 </div>

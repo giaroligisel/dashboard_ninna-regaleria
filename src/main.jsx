@@ -13,6 +13,8 @@ import DetailProduct from './components/DetailProduct';
 import LastProduct from './components/LastProduct';
 import LastUser from './components/LastUser';
 import DetailUser from './components/DetailUser';
+import ProductForm from './components/ProductForm';
+import ProductEditForm from './components/ProductEditForm';
 
 
 const router = createBrowserRouter([
@@ -26,7 +28,7 @@ const router = createBrowserRouter([
         element: <Main />
       },
       {
-        path: '/products/list',
+        path: '/products/list/:page?',
         element: <Product />
       },
       {
@@ -34,11 +36,23 @@ const router = createBrowserRouter([
         element: <DetailProduct />
       },
       {
+        path: '/products/detail/:id/edit',
+        element: <ProductEditForm />
+      },
+      {
+        path: '/products/create',
+        element: <ProductForm />
+      },
+      {
         path: '/products/lastAdedd',
         element: <LastProduct />
       },
       {
-        path: '/users/list',
+        path: '/products/lastAdedd/:id/edit',
+        element: <ProductEditForm />
+      },
+      {
+        path: '/users/list/:page?',
         element: <User />
       },
       {
