@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 function ProductForm(props){
     return(
         <>
-        <Header title="Crear nuevo producto" />
         <div className="form-create">
             <div className="form-content">
                 <form action="" method="POST" encType="multipart/form-data">
