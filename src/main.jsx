@@ -15,6 +15,7 @@ import LastUser from './components/LastUser';
 import DetailUser from './components/DetailUser';
 import ProductForm from './components/ProductForm';
 import ProductEditForm from './components/ProductEditForm';
+import Header from './components/Header';
 
 
 const router = createBrowserRouter([
@@ -37,11 +38,17 @@ const router = createBrowserRouter([
       },
       {
         path: '/products/detail/:id/edit',
-        element: <ProductEditForm />
+        element: <>
+                <Header title="Editar producto"/>
+                <ProductEditForm />
+                </>
       },
       {
         path: '/products/create',
-        element: <ProductForm />
+        element: <>
+                <Header title="Crear nuevo producto"/>
+                <ProductForm />
+                </>
       },
       {
         path: '/products/lastAdedd',
